@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-item>
+    <ion-label fixed>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name" name="theName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Project</ion-label>
+    <ion-select [(ngModel)]="project">
+      <ion-option *ngFor="let p of availProjects" [value]="p">{{p.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div class="app-section-title">Captured Intervals</div>
+  <ion-list *ngFor="let ti of timer.intervals" no-margin no-lines>
+    <timer-interval [rangeObj]="ti"></timer-interval>
+    <button small ion-button color="danger" (click)="delete(ti)" no-border no-margin>Delete</button>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button full (click)="dismiss()">Dismiss</button>
+</ion-footer>

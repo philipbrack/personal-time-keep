@@ -3,17 +3,13 @@
 
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
-$font-path: "../assets/fonts";
-
 
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
-
 @import "ionic.globals";
-
 
 // Shared Variables
 // --------------------------------------------------
@@ -22,8 +18,8 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
-
+$font-path: "../assets/fonts";
+$ionicons-font-path: "../assets/fonts";
 
 // Named Color Variables
 // --------------------------------------------------
@@ -33,35 +29,61 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+/*
+
+Blue: #0786ff
+Black/Brown: #370506
+Pink: #f995d6
+Tan: #ffe7c8
+White: #efece7
+ */
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary: #0786ff,
+  secondary: #f995d6,
+  danger: #f53d3d,
+  light: #ffe7c8,
+  dark: #370506,
+  darker:#3c3434,
+  white: #efece7
 );
 
+.app-section-title {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 1.6rem;
+  color: color($colors, light);
+}
+
+$background-color: color($colors, dark);
+
+// background for the title bar.
+$toolbar-background: color($colors, dark);
+$toolbar-border-color: color($colors, dark);
+$toolbar-ios-border-color: color($colors, dark);
+$list-background-color: color($colors, white);
+$list-border-color: transparent;
+$list-text-color: black;
+$toolbar-ios-padding: 0px;
+
+.button-full-ios {
+  border-radius: 26px !important;
+
+}
+
+$action-sheet-ios-background: color($colors, white);
+$alert-ios-background: color($colors, white);
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
-
-
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
-
 
 // App Theme
 // --------------------------------------------------
@@ -70,8 +92,10 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-@import "ionic.theme.default";
+@import "ionic.theme.dark";
 
+$font-path: "../assets/fonts";
+$ionicons-font-path: "../assets/fonts";
 
 // Ionicons
 // --------------------------------------------------
@@ -80,9 +104,22 @@ $colors: (
 
 @import "ionic.ionicons";
 
-
 // Fonts
 // --------------------------------------------------
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: 'Avenir-Book';
+  src: url('../assets/fonts/AvenirLTStd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('../assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+// override ionic default.
+//$font-family-base: 'OpenSans-Regular';
+

@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Projects</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="project">
+  <form #projectForm="ngForm">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label floating>New Project Name</ion-label>
+        <ion-input [(ngModel)]="newProject" name="theNewProject" type="text" required></ion-input>
+      </ion-item>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="addProject()" [disabled]="!projectForm.valid">
+          <ion-icon name="ios-add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-list>
+  </form>
+  <div class="app-section-title">Current Projects</div>
+  <ion-list class="project-list" no-lines no-margin *ngFor="let p of model.projectsObservable | async">
+    <ion-item-sliding #projectItem>
+
+      <ion-item no-lines no-border no-padding>
+        {{p.name}}
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button icon-only (click)="edit(p,projectItem)">
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button icon-only color="danger" (click)="delete(p,projectItem)">
+          <ion-icon name="ios-trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,34 @@
+<div class="timer-container">
+
+  <ion-list no-lines no-margin>
+    <ion-item-sliding #item>
+
+      <ion-item no-lines no-border no-padding (click)="togglePause()">
+        <ion-grid>
+          <ion-row align-items-center>
+            <!-- <ion-spinner name="crescent" paused="{{isPaused}}"></ion-spinner> -->
+
+            <span class="pulse" [class.paused]="isPaused"></span>
+
+            <div class="clock-title">{{title}}</div>
+            <div class="clock-subtitle">{{duration}}</div>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button icon-only (click)="edit(item)">
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+        <button ion-button icon-only (click)="delete(item)" color="danger">
+          <ion-icon name="ios-trash"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="complete()">
+          <ion-icon name="ios-checkmark"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</div>

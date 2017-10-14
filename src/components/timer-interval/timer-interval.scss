@@ -1,0 +1,14 @@
+.timer-interface {
+  ion-item {
+    background-color: color($colors, secondary);
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  ion-list {
+    margin-bottom: 2px;
+    margin-top: 5px;
+    button {
+    }
+  }
+
+}

@@ -1,0 +1,70 @@
+.timer-container {
+
+  ion-item {
+
+    margin-left: 3px;
+    padding-bottom: 2px;
+  }
+
+  .clock-title {
+    padding-left: 3px;
+    font-size: 1.75rem;
+    height: 100%;
+    display: block;
+    vertical-align: middle;
+  }
+  .clock-subtitle {
+    padding-left: 10px;
+    color: color($colors, primary);
+    height: 100%;
+    display: block;
+    vertical-align: middle;
+  }
+
+  // pulse animation
+  .pulse {
+    //margin: 100px;
+    margin: 5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: color($colors, primary);
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(154, 65, 244, 0.4);
+    animation: pulse 1s infinite;
+  }
+  .paused {
+    background: color($colors, danger);
+
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+  }
+
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(244, 172, 65, 0.7);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 7px rgba(154, 65, 244, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 4px rgba(154, 65, 244, 0);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(244, 172, 65, 0.7);
+      box-shadow: 0 0 0 0 rgba(244, 172, 65, 0.7);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 7px rgba(154, 65, 244, 0);
+      box-shadow: 0 0 0 7px rgba(154, 65, 244, 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 4px rgba(154, 65, 244, 0);
+      box-shadow: 0 0 0 4px rgba(154, 65, 244, 0);
+    }
+  }
+
+}

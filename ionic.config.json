@@ -1,5 +1,8 @@
 {
-  "name": "time-keep-free",
+  "name": "PersonalTimeKeep",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

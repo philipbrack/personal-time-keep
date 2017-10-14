@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name" name="theName"></ion-input>
+  </ion-item>
+
+  <div class="app-section-title">Completed Timers</div>
+  <div *ngFor="let t of timers">
+    <div class="completed-timer">{{t.title}}</div>
+  </div>
+
+  <button ion-button full (click)="dismiss()">Dismiss</button>
+</ion-content>

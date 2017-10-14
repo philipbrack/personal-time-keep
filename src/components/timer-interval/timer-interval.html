@@ -1,0 +1,12 @@
+<div class="timer-interface">
+  <ion-list no-border no-margin>
+    <ion-item no-border no-margin>
+      <ion-label>Start</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY HH:mm:ss" [(ngModel)]="start" (ionChange)="update()"></ion-datetime>
+    </ion-item>
+    <ion-item no-border no-margin>
+      <ion-label>End</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY HH:mm:ss" [(ngModel)]="end" (ionChange)="update()"></ion-datetime>
+    </ion-item>
+  </ion-list>
+</div>

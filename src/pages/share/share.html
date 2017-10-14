@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Share</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="share">
+  <p>
+    We will send the project of your choice as a CSV email attachment!
+  </p>
+  <form #shareForm="ngForm">
+    <ion-item>
+      <ion-label>Project</ion-label>
+      <ion-select [(ngModel)]="project" name="theProject">
+        <ion-option *ngFor="let p of availProjects" [value]="p">{{p.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="theEmail"
+                 required
+                 email></ion-input>
+    </ion-item>
+    <button ion-button full (click)="send()" [disabled]="!shareForm.valid">Send</button>
+  </form>
+</ion-content>
