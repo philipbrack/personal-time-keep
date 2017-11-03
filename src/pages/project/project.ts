@@ -27,6 +27,7 @@ export class ProjectPage {
       alert.present();
     }
     this.keyboard.close();
+    this.newProject = '';
   }
 
   delete(project: ProjectModel, item: ItemSliding) {
@@ -38,6 +39,7 @@ export class ProjectPage {
         buttons: ['Dismiss']
       });
       alert.present();
+      item.close();
       return;
     }
 
@@ -64,6 +66,16 @@ export class ProjectPage {
   }
 
   edit(proj: ProjectModel, slidingItem: ItemSliding) {
+    if (proj.name === 'None') {
+      let alert = this.alertCtrl.create({
+        title: 'Info',
+        subTitle: 'Cannot edit this project',
+        buttons: ['Dismiss']
+      });
+      alert.present();
+      slidingItem.close();
+      return;
+    }
     let m = this.modalCtrl.create(ProjectEditorComponent, {project: proj});
     m.onDidDismiss(data => {
     });
