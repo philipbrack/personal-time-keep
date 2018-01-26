@@ -33,17 +33,18 @@
     cursor: pointer;
     box-shadow: 0 0 0 rgba(154, 65, 244, 0.4);
     animation: pulse 1s infinite;
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
   }
   .paused {
     background: color($colors, danger);
-
     animation-play-state: paused;
     -webkit-animation-play-state: paused;
   }
 
   @-webkit-keyframes pulse {
     0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(244, 172, 65, 0.7);
+      -webkit-box-shadow: 0 0 0 0 rgba(244, 113, 66, 0.8);
     }
     70% {
       -webkit-box-shadow: 0 0 0 7px rgba(154, 65, 244, 0);
@@ -54,8 +55,8 @@
   }
   @keyframes pulse {
     0% {
-      -moz-box-shadow: 0 0 0 0 rgba(244, 172, 65, 0.7);
-      box-shadow: 0 0 0 0 rgba(244, 172, 65, 0.7);
+      -moz-box-shadow: 0 0 0 0 rgba(244, 113, 66, 0.8);
+      box-shadow: 0 0 0 0 rgba(244, 113, 66, 0.8);
     }
     70% {
       -moz-box-shadow: 0 0 0 7px rgba(154, 65, 244, 0);
