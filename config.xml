@@ -94,7 +94,7 @@
     <plugin name="cordova-plugin-globalization" spec="^1.0.7" />
     <plugin name="cordova-plugin-statusbar" spec="git+https://github.com/apache/cordova-plugin-statusbar.git" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
-    <engine name="ios" spec="git+https://github.com/apache/cordova-ios.git#master" />
-    <engine name="android" spec="6.3.0" />
     <allow-navigation href="http://10.210.108.52:8100" />
+    <engine name="ios" spec="4.6.0-dev" />
+    <engine name="android" spec="6.3.0" />
 </widget>
